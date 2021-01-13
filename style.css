@@ -10,6 +10,7 @@
   --clr-violet-primary: hsl(257, 40%, 49%);
   --clr-magenta-soft: hsl(300, 69%, 71%);
   --clr-white: white;
+  --clr-shadow: black;
 }
 
 * {
@@ -29,6 +30,7 @@ body {
   font-family: var(--ff-openSans-body);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .title-primary {
@@ -126,4 +128,93 @@ footer a {
 
 footer a + a {
   margin-left: 1.5rem;
+}
+
+@media (min-width: 1400px) {
+  body {
+    background: url('./images/bg-desktop.svg') no-repeat center var(--clr-violet-primary);
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .container {
+    max-width: 1400px;
+    height: 100vh;
+    grid-template-columns: 200px auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      "logo . ."
+      "illustration illustration info"
+      ". . midia"
+    ;
+  
+    padding: 3.5rem;
+  }
+
+  header {
+    grid-area: logo;
+    padding: 0;
+    margin-bottom: 6rem;
+  }
+
+  header img {
+    width: 200px;
+  }
+
+  section img {
+    width: 800px;
+  } 
+
+  section { 
+   grid-area: illustration;
+   padding: 0;
+  }
+
+  main {
+    grid-area: info;
+    align-items: flex-start;
+  }
+
+  main a {
+    width: 35%;
+    padding: 1.5rem;
+    box-shadow: 0 0 40px -10px var(--clr-shadow);
+    transition: background .3s;
+  }
+
+  main a:hover {
+    background: var(--clr-magenta-soft);
+    color: var(--clr-white);
+  }
+
+  .title-primary {
+    font-size: 4rem;
+    width: 20ch;
+  }
+
+  .text-primary {
+    font-size: 1.8rem;
+  }
+
+  .title-primary,
+  .text-primary {
+    text-align: left;
+  }
+
+  footer {
+    grid-area: midia;
+    justify-self: end;
+    padding-right: 3rem;
+  }
+
+  footer a {
+    width: 40px;
+    height: 40px;
+    transition: color .2s;
+  }
+
+  footer a:hover {
+    color: var(--clr-magenta-soft);
+    border-color: var(--clr-magenta-soft);
+  }
 }
