@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://ik.imagekit.io/xfddek6eqk/landing-page_2vwergmhtv.gif" alt="landing page gif"/>
+</p>
+
 # Sumário
 - [Sobre](#-Sobre)
 - [Desafios](#-Desafios)
